@@ -1,6 +1,6 @@
 import { PhotosApi } from '../../api';
 
-export const GET_PHOTOS = 'GET_PHOTOS';
+export const GET_ALL_PHOTOS = 'GET_ALL_PHOTOS';
 
 const DEFAULT_STATE = {
     albums: null,
@@ -9,14 +9,14 @@ const DEFAULT_STATE = {
 };
 
 export default function(state = DEFAULT_STATE, action) {
-    if (action.type === `${GET_PHOTOS}_FULFILLED`) {
+    if (action.type === `${GET_ALL_PHOTOS}_FULFILLED`) {
         return state;
     }
 
     return state;
 }
 
-export const getPhotos = () => ({
-    type: GET_PHOTOS,
+export const getAllPhotos = () => ({
+    type: GET_ALL_PHOTOS,
     payload: PhotosApi.getAllPhotos()
 });
