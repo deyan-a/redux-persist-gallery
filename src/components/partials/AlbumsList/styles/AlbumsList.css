@@ -1,0 +1,27 @@
+.albums-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+.album-item-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 0px 0px #ccc;
+}
+
+.album-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.album-link :hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
