@@ -8,7 +8,11 @@ import * as actions from '../../store/modules/photos';
 
 class Mainlayout extends React.Component {
     componentDidMount() {
-        this.props.dispatch(actions.getAllPhotos());
+        const { getAllPhotosStatus } = this.props;
+
+        if (!getAllPhotosStatus) {
+            this.props.dispatch(actions.getAllPhotos());
+        }
     }
 
     render() {
