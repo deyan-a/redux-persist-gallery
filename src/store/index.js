@@ -10,4 +10,4 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 const store = createStore(rootReducer, composeEnhancers(middleware));
 const persistor = persistStore(store);
 
-export default { store, persistor };
+export { store, persistor };
