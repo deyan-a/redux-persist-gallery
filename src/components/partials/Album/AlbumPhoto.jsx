@@ -1,10 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getPhotoById } from '../../../store/selectors/photos';
+import * as actions from '../../../store/modules/photos';
+
 import './styles/Album.css';
 
 class AlbumPhoto extends React.Component {
-    handleFavoriteClick() {}
+    constructor(props) {
+        super(props);
+        this.handleFavoriteClick = this.handleFavoriteClick.bind(this);
+    }
+
+    handleFavoriteClick() {
+        const { photoId, isFavorite } = this.props;
+
+        if (isFavorite) {
+            this.props.dispatch(actions.removeFromFavorites(photoId));
+        } else {
+            this.props.dispatch(actions.addToFavorites(photoId));
+        }
+    }
 
     render() {
         const { photo, isFavorite } = this.props;
