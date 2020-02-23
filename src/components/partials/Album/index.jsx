@@ -19,11 +19,14 @@ const mapStateToProps = (state, ownProps) => {
     const {
         match: {
             params: { albumId }
-        }
+        },
+        isFavorites
     } = ownProps;
 
     return {
-        album: getAlbumById(state.photos.albums, albumId)
+        album: isFavorites
+            ? state.photos.favorites
+            : getAlbumById(state.photos.albums, albumId)
     };
 };
 
