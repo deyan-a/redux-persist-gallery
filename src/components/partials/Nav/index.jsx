@@ -3,8 +3,8 @@ import NavItem from './NavItem';
 
 const Nav = () => (
     <ul className="nav-container">
-        <NavItem to="/" label="Home" />
-        <NavItem to="/favorites" label="Favorites" />
+        <NavItem path="/" label="Home" />
+        <NavItem path="/favorites" label="Favorites" />
     </ul>
 );
 
